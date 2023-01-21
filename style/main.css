@@ -10,6 +10,12 @@
   --primary-green: hsl(165, 46%, 58%);
   --nav-menu-bg: hsl(180, 10%, 16%);
   --nav-menu-font: hsl(198, 7%, 37%);
+  --card-title-font: hsl(210, 7%, 49%);
+  --card-text-font: hsl(205, 10%, 61%);
+  --content-bg: hsl(180, 8%, 97%);
+  --btn-secundary: hsl(193, 12%, 31%);
+  --laptop-slider: hsl(195, 10%, 16%);
+  --footer-font-color: hsl(195, 8%, 29%);
 }
 
 
@@ -20,11 +26,38 @@
 body{
   margin: 0;
   font-family: 'Open Sans', sans-serif;
+  line-height: 1.5;
 }
 
 img{max-width: 100%;}
 
+.container{
+  margin-inline: auto;
+  padding-inline: 1.6rem;
+}
 
+.btn{
+  padding: 1.5rem 4rem;
+  border-radius: 3px;
+  text-decoration: none;
+  color: var(--white);
+  text-transform: uppercase;
+  font-weight: 600;
+  font-size: 1.5rem;
+  margin-right: 1.5rem;
+  display: inline-block;
+  transition: .5s ease;
+}
+
+.btn:hover{background: var(--card-text-font);}
+
+.btn-primary{
+  background: var(--primary-green);  
+}
+
+.btn-secundary{
+  background: var(--btn-secundary);  
+}
 
 
 
@@ -92,8 +125,10 @@ img{max-width: 100%;}
   height: 80vh;
   padding: 4rem 2rem;
   text-align: center;
-  background-image: url(../img/01.jpg);
-  background-size: cover;
+  background: linear-gradient(45deg, white 50%, transparent 50%) no-repeat left calc(50% + 2rem) bottom,
+  linear-gradient(-45deg, white 50%, transparent 50%) no-repeat left calc(50% - 2rem) bottom,
+  url(../img/01.jpg);
+  background-size: 4rem 4rem, 4rem 4rem, cover;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -134,4 +169,206 @@ img{max-width: 100%;}
   border-color: var(--primary-green);
   color: var(--primary-green);
   background-color: rgba(0, 0, 0, .7);
+}
+
+
+
+
+/* CARDS */
+
+
+
+.cards{
+  margin-top: 4rem;
+}
+
+.cards__card{
+  margin-top: 1rem;
+  border-radius: 10px;
+  overflow: hidden;
+  border: 5px solid transparent;
+  transition: .3s ease;
+}
+
+.cards__card:hover{
+  border: 5px solid var(--primary-green);
+}
+
+.cards__card:hover .card__avatar img{
+  transform: translateY(-50%);
+}
+
+.cards__card:hover .card__title,
+.cards__card:hover .card__text{color: var(--primary-green);}
+
+
+
+.card__image{
+  width: 100%;
+}
+
+.card__avatar{
+  margin: -5.5rem auto;
+  width: 8.8rem;
+  height: 8.8rem;
+  overflow: hidden;
+}
+
+.card__content{
+  text-align: center;
+  padding: 4rem 2.5rem 1rem;
+  border-inline: 1px solid #dbe1e7;
+  border-bottom: 1px solid #dbe1e7;
+  border-radius: 10px;
+}
+
+.card__title{
+  color: var(--card-title-font);
+  font-size: 2.1rem;
+  font-weight: 400;
+}
+
+.card__text{
+  color: var(--card-text-font);
+  font-size: 1.4rem;
+}
+
+
+
+
+
+/* CONTENT */
+
+
+
+
+.content{
+  background: var(--content-bg);
+  padding: 2rem 0 8rem;
+  border-top: 1px solid #e3e3e3;
+}
+
+.content__title{
+  color: var(--card-title-font);
+  font-size: 2.1rem;
+  padding-top: 4rem;
+  font-weight: 400;
+}
+
+.content__text{
+  color: var(--card-text-font);
+  font-size: 1.4rem;
+  word-spacing: 2px;
+}
+
+
+
+
+
+/* LAST-ARTICLES */
+
+
+
+
+.last-articles__title{
+  background: var(--primary-green);
+  padding-block: 2.5rem;
+  color: var(--white);
+  font-size: 2.4rem;
+  text-transform: uppercase;
+  font-weight: 400;
+  margin: 0;
+}
+
+.last-articles__thumbs{
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  grid-auto-rows: auto;
+  grid-gap: 0;
+}
+
+.last-articles__thumbs img{
+  display: block;
+  width: 100%;
+}
+
+
+
+
+
+/* LAPTOP-SLIDER */
+
+
+
+
+.laptop-slider{
+  background: var(--laptop-slider);
+  padding: 12.5rem 0 10rem;
+  width: 100%;
+  overflow: auto;
+}
+
+.slideshow{
+  white-space: nowrap;
+}
+
+.slideshow figure{
+  display: inline-block;
+}
+
+
+
+
+
+/* QUOTE SECTION */
+
+
+
+
+.quote-section{
+  background: var(--primary-green);
+  padding-block: 5rem;
+  border-bottom: 12px solid #48b9a1;
+}
+
+.quote-slide h2{
+  color: var(--white);
+  font-size: 3rem;
+  font-weight: 400;
+  font-style: italic;
+}
+
+.quote-slide figcaption{
+  color: var(--white);
+  font-size: 1.8rem;
+  text-align: center;
+}
+
+.no-js .quote-slide figure + figure{margin-top: 8rem;}
+
+
+
+
+
+/* FOOTER */
+
+
+
+
+.footer{
+  background: var(--laptop-slider);
+  padding: 5rem 0 25rem;
+  color: var(--footer-font-color);
+  font-size: 1.4rem;
+}
+
+.footer__links li{
+  list-style: none;
+}
+
+.footer__links a{
+  color: var(--footer-font-color);
+  display: block;
+  font-weight: 600;
+  text-decoration: none;
 }
