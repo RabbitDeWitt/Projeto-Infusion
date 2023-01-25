@@ -72,7 +72,10 @@ img{max-width: 100%;}
   flex-direction: column;
 }
 
-.js .header{position: fixed;}
+.js .header{
+  position: fixed;
+  z-index: 10;
+}
 
 .logo-text{
   margin: 0;
@@ -311,8 +314,13 @@ img{max-width: 100%;}
 .last-articles__thumbs img{
   display: block;
   width: 100%;
+  filter: brightness(.5);
+  transition: .5s ease;
 }
 
+.last-articles__thumbs img:hover{
+    filter: brightness(1);
+}
 
 
 
