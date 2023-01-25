@@ -6,7 +6,7 @@ function Menu(config) {
   this.maxWidth = config.widthEnabled || false;
 
   var _opened = false;
-  var _this = this;
+  const _this = this;
 
 
   this.btn.removeAttribute('style');
